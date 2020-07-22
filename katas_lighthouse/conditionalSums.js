@@ -19,8 +19,6 @@ const conditionalSum = function (values, condition) {
     }
   }
 
-  // console.log(sum);
-
   return sum;
 };
 
