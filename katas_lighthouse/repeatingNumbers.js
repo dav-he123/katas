@@ -1,7 +1,8 @@
 const repeatNumbers = function (data) {
   // Put your solution here
 
-  let output = [];
+  let output = " ";
+
   for (let i = 0; i < data.length; i++) {
     let a = data[i][0];
     let b = data[i][1];
@@ -13,9 +14,6 @@ const repeatNumbers = function (data) {
       }
     }
   }
-  // let array = [];
-
-  // array.push(output);
   return output;
 };
 
