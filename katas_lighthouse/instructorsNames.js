@@ -1,6 +1,4 @@
 const instructorWithLongestName = function (instructors) {
-  // Put your solution here
-
   // for (let key of Object.values(instructors)) {
   //   console.log(key.name.split("").length);
   // }
@@ -9,7 +7,6 @@ const instructorWithLongestName = function (instructors) {
     return b.name.length - a.name.length;
   });
 
-  // console.log(longestName[0]);
   return longestName[0];
 };
 
