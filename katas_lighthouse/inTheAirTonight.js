@@ -9,7 +9,7 @@ const checkAir = function (samples, threshold) {
   }
 
   // console.log(countDirty);
-  // console.log(samples.length);
+  console.log(samples.length);
 
   if (countDirty / samples.length < threshold) {
     return "clean";
