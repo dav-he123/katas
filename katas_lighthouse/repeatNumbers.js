@@ -8,24 +8,24 @@ const repeatNumbers = function (data) {
     for (let x = 0; x < data[y].length; x++) {
       // console.log(data[y][1]);
       for (let i = 0; i < data[y][1]; i++) {
-        finalArray.push(data[0][0]);
+        finalArray.push(data[y][0]);
       }
-      return finalArray;
+      return finalArray.join("").toString("");
     }
   }
 };
 
 console.log(repeatNumbers([[1, 10]]));
-// console.log(
-//   repeatNumbers([
-//     [1, 2],
-//     [2, 3],
-//   ])
-// );
-// console.log(
-//   repeatNumbers([
-//     [10, 4],
-//     [34, 6],
-//     [92, 2],
-//   ])
-// );
+console.log(
+  repeatNumbers([
+    [1, 2],
+    [2, 3],
+  ])
+);
+console.log(
+  repeatNumbers([
+    [10, 4],
+    [34, 6],
+    [92, 2],
+  ])
+);
