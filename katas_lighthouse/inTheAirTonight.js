@@ -6,12 +6,15 @@ const checkAir = function (samples, threshold) {
     if (samples[i] === "dirty") {
       countDirty += 1;
     }
+  }
 
-    if (countDirty / samples.length < 0.4) {
-      return "clean";
-    } else {
-      return "dirty";
-    }
+  // console.log(countDirty);
+  // console.log(samples.length);
+
+  if (countDirty / samples.length < threshold) {
+    return "clean";
+  } else {
+    return "polluted";
   }
 };
 
