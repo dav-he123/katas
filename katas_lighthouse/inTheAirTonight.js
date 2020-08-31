@@ -1,27 +1,18 @@
 const checkAir = function (samples, threshold) {
   // Code here!
-  //hi
+  let countDirty = 0;
 
-  for(let i = 0; i < samples.length; i++){
-
-    if(threshold < 0.4){
-
-      samples[i] === dirty{
-
-
-        
-      }
-
-      
-
+  for (let i = 0; i < samples.length; i++) {
+    if (samples[i] === "dirty") {
+      countDirty += 1;
     }
-    
+
+    if (countDirty / samples.length < 0.4) {
+      return "clean";
+    } else {
+      return "dirty";
+    }
   }
-
-
-
-
-
 };
 
 console.log(
