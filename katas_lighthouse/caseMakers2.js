@@ -10,6 +10,7 @@ const camelCase = function (input) {
     } else {
       answer += array[i].charAt().toLowerCase();
     }
+
     answer += array[i].substring(1);
   }
   return answer;
