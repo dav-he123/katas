@@ -13,12 +13,20 @@ console.log(4186 < sphereVolume(10) && sphereVolume(10) < 4189);
 
 const coneVolume = function (radius, height) {
   // And here!
+
+  let volumeCone = (1 / 3) * height * PI * Math.pow(radius, 2);
+
+  return volumeCone;
 };
 
 console.log(45 < coneVolume(3, 5) && coneVolume(3, 5) < 49);
 
 const prismVolume = function (height, width, depth) {
   // Probably here too!
+
+  let volumePrism = height * width * depth;
+
+  return volumePrism;
 };
 
 console.log(prismVolume(3, 4, 5) === 60);
