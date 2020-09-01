@@ -33,25 +33,9 @@ const talkingCalendar = function (date) {
         answer += "December" + " ";
       }
     } else if (i === 2) {
-      if (array[i] === "01") {
-        answer += "1" + ", ";
-      } else if (array[i] === "02") {
-        answer += "2" + ", ";
-      } else if (array[i] === "03") {
-        answer += "3" + ", ";
-      } else if (array[i] === "04") {
-        answer += "4" + ", ";
-      } else if (array[i] === "05") {
-        answer += "5" + ", ";
-      } else if (array[i] === "06") {
-        answer += "6" + ", ";
-      } else if (array[i] === "07") {
-        answer += "7" + ", ";
-      } else if (array[i] === "08") {
-        answer += "8" + ", ";
-      } else if (array[i] === "09") {
-        answer += "9" + ", ";
-      } else if (array[i] > 9) {
+      if (array[i] >= 1 && array[i] <= 9) {
+        answer += array[i].slice(1) + ", ";
+      } else {
         answer += array[i] + ", ";
       }
     }
@@ -69,3 +53,5 @@ const talkingCalendar = function (date) {
 console.log(talkingCalendar("2017/12/02"));
 console.log(talkingCalendar("2007/11/11"));
 console.log(talkingCalendar("1987/08/24"));
+console.log(talkingCalendar("1987/10/31"));
+console.log(talkingCalendar("2001/08/05"));
