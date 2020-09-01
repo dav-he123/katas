@@ -5,14 +5,19 @@ const multiplicationTable = function (maxValue) {
 
   if (maxValue > 1) {
     for (let i = 1; i <= maxValue; i++) {
-      for (let j = maxValue; j >= 0; j--)
+      for (let j = 1; j <= maxValue; j++)
         answer += i * (maxValue - (maxValue - j)) + " ";
+      answer += "\n";
     }
   }
 
-  for (let i = 1; i <= maxValue; i++) {
-    answer += maxValue * i + " ";
+  if (maxValue === 1) {
+    for (let i = 1; i <= maxValue; i++) {
+      answer += maxValue * i + " ";
+      answer += "\n";
+    }
   }
+
   return answer;
 };
 
