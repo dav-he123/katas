@@ -3,12 +3,15 @@ const multiplicationTable = function (maxValue) {
 
   let answer = "";
 
-  for (let i = 0; i < maxValue; i++) {
-    for (let count = 1; count < maxValue; count++) {
-      answer += maxValue * count + " ";
+  if (maxValue > 1) {
+    for (let i = 1; i <= maxValue; i++) {
+      answer += i * (maxValue - (maxValue - 1)) + " ";
+    }
+  } else {
+    for (let i = 1; i <= maxValue; i++) {
+      answer += maxValue * i + " ";
     }
   }
-
   return answer;
 };
 
