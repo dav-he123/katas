@@ -34,9 +34,8 @@ console.log(prismVolume(3, 4, 5) === 60);
 const totalVolume = function (solids) {
   // Code here? Yup!
 
-  let totalVolumeSphere;
-  let totalVolumeCone;
-  let totalVolume;
+  let totalVolumeSphere = 0;
+  let totalVolumeCone = 0;
 
   for (const element of solids) {
     if ((element.type = "sphere")) {
@@ -45,9 +44,7 @@ const totalVolume = function (solids) {
       totalVolumeCone += coneVolume(element.radius, element.height);
     }
   }
-  totalVolume = totalVolumeSphere + totalVolumeCone;
-
-  return totalVolume;
+  return (totalVolumeFinal = totalVolumeSphere + totalVolumeCone);
 };
 
 const largeSphere = {
