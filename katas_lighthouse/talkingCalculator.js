@@ -19,9 +19,7 @@ const talkingCalendar = function (date) {
 
   for (let j = 0; j < date.length; j++) {
     if (j === 0) {
-      if ((array[j] = "2017")) {
-        answer += "2017";
-      }
+      answer += array[j];
     }
   }
 
