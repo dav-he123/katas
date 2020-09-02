@@ -87,7 +87,7 @@ const calculateChange = function (total, cash) {
   return finalAnswer;
 };
 
-// console.log(calculateChange(1787, 2000));
+console.log(calculateChange(1787, 2000));
 // console.log(calculateChange(2623, 4000));
-console.log(calculateChange(501, 1000));
+// console.log(calculateChange(501, 1000));
 // console.log(calculateChange(0, 5));
