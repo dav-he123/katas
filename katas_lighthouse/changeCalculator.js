@@ -3,13 +3,18 @@ const calculateChange = function (total, cash) {
 
   let changeInCents = cash - total;
   let finalAnswer = {};
-  let remainder1 = 0;
+
   let numberOfTwentyDollars = changeInCents / 2000;
+  let remainder1 = 0;
+
   if (changeInCents >= 2000) {
     remainder1 += changeInCents % 2000;
-  } else {
-    remainder1 === 0;
+  } else if (remainder1 >= 1000) {
+    remainder1 += changeInCents % 1000;
+  } else if (remainder1 >= 500) {
+    remainder1 += changeInCents % 1000;
   }
+
   if (Math.trunc(numberOfTwentyDollars) !== 0) {
     let twentyDollars = Math.trunc(numberOfTwentyDollars);
     finalAnswer["twentyDollar"] = twentyDollars;
@@ -24,27 +29,15 @@ const calculateChange = function (total, cash) {
 
     finalAnswer["tenDollar"] = tenDollars;
 
-    if (remainder1 >= 1000) {
-      remainder2 += remainder1 % 1000;
-    } else {
-      remainder2 += 0;
-    }
-
     if (tenDollars === 0) {
       let numberOfFiveDollars = changeInCents / 500;
       let fiveDollars = Math.trunc(numberOfFiveDollars);
 
       finalAnswer["fiveDollar"] = fiveDollars;
-
-      if (remainder2 >= 500) {
-        remainder3 += remainder2 % 500;
-      } else {
-        remainder3 += 0;
-      }
     }
   }
 
-  let numberOfTwoDollars = remainder3 / 200;
+  let numberOfTwoDollars = remainder1 / 200;
   let twoDollars = Math.trunc(numberOfTwoDollars);
 
   finalAnswer["twoDollar"] = twoDollars;
