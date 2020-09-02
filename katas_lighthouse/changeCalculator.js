@@ -4,36 +4,45 @@ const calculateChange = function (total, cash) {
   let changeInCents = cash - total;
   let finalAnswer = {};
 
-  let numberOfTenDollars = changeInCents / 1000;
-  let A = Math.trunc(numberOfTenDollars);
+  let numberOfTwentyDollars = changeInCents / 2000;
+  let twentyDollars = Math.trunc(numberOfTwentyDollars);
 
-  finalAnswer["tenDollar"] = A;
+  finalAnswer["twentyDollar"] = twentyDollars;
 
-  if (A === 0) {
-    let numberOfFiveDollars = changeInCents / 500;
-    let B = Math.trunc(numberOfFiveDollars);
+  if (Math.trunc(numberOfTwentyDollars) === 0) {
+    let numberOfTenDollars = changeInCents / 1000;
+    let tenDollars = Math.trunc(numberOfTenDollars);
 
-    finalAnswer["fiveDollar"] = B;
-  } else if (B === 0) {
-    let numberOfTwoDollars = changeInCents / 200;
-    let C = Math.trunc(numberOfTwoDollars);
+    finalAnswer["tenDollar"] = tenDollars;
 
-    finalAnswer["twoDollar"] = C;
+    if (tenDollars === 0) {
+      let numberOfFiveDollars = changeInCents / 500;
+      let fiveDollars = Math.trunc(numberOfFiveDollars);
+
+      finalAnswer["fiveDollar"] = fiveDollars;
+    }
   }
 
   let numberOfTwoDollars = changeInCents / 200;
-  let C = Math.trunc(numberOfTwoDollars);
+  let twoDollars = Math.trunc(numberOfTwoDollars);
 
-  finalAnswer["twoDollar"] = C;
+  finalAnswer["twoDollar"] = twoDollars;
 
-  let numberOfOneDollars = changeInCents / 100;
-  let D = Math.trunc(numberOfOneDollars);
+  let numberOfQuarterDollars = changeInCents / 25;
 
-  finalAnswer["oneDollar"] = D;
+  if (Math.trunc(numberOfQuarterDollars) % 4 === 0) {
+    let numberOfOneDollars = changeInCents / 100;
+
+    if (Math.trunc(numberOfOneDollars) % 2 !== 0) {
+      let oneDollars =
+        Math.trunc(numberOfOneDollars) - (Math.trunc(numberOfOneDollars) - 1);
+      finalAnswer["oneDollar"] = oneDollars;
+    }
+  }
 
   return finalAnswer;
 };
 
-console.log(calculateChange(1787, 2000));
+// console.log(calculateChange(1787, 2000));
 console.log(calculateChange(2623, 4000));
-console.log(calculateChange(501, 1000));
+// console.log(calculateChange(501, 1000));
