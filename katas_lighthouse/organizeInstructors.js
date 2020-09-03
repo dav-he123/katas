@@ -4,17 +4,12 @@ const organizeInstructors = function (instructors) {
   let finalObj = {};
   let finalArray = [];
 
-  for (let elem of instructors) {
-    for (let obj in elem) {
-      finalObj[elem.couse] = finalArray;
+  for (const elem of instructors) {
+    for (const [key, value] of Object.entries(elem)) {
+      finalArray.push(value);
+      finalObj[elem.course] = finalArray;
     }
-    finalObj[elem.couse] = finalArray;
   }
-
-  // for (let elem of instructors) {
-  //   finalArray.push(elem.name);
-  //   finalObj[elem.course] = finalArray;
-  // }
 
   return finalObj;
 };
