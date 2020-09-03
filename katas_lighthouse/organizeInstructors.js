@@ -2,26 +2,37 @@ const organizeInstructors = function (instructors) {
   // Put your solution here
 
   let finalObj = {};
-  let firstArray = [];
-  let secondArray = [];
+  // let firstArray = [];
+  // let secondArray = [];
 
-  instructors.forEach(function (element) {
-    if (element.course === "Web") {
-      firstArray.push(element.name);
-      finalObj[element.course] = firstArray;
-    } else if (element.course === "iOS") {
-      secondArray.push(element.name);
-      finalObj[element.course] = secondArray;
-    }
-  });
+  // instructors.forEach(function (element) {
+  //   if (element.course === "Web") {
+  //     firstArray.push(element.name);
+  //     finalObj[element.course] = firstArray;
+  //   } else if (element.course === "iOS") {
+  //     secondArray.push(element.name);
+  //     finalObj[element.course] = secondArray;
+  //   }
+  // });
+
+  for (const elem of instructors) {
+    finalObj[elem.course] = [];
+  }
+
+  for (const student of instructors) {
+    finalObj[student.course].push(student.name);
+    // console.log("AAAAAAAAAAA");
+    // console.log(finalObj[student.course]);
+    // console.log(student.name);
+  }
 
   return finalObj;
 };
 
 console.log(
   organizeInstructors([
-    { name: "Samuel", course: "iOS" },
     { name: "Victoria", course: "Web" },
+    { name: "Samuel", course: "iOS" },
     { name: "Karim", course: "Web" },
     { name: "Donald", course: "Web" },
   ])
