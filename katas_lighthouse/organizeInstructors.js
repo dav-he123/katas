@@ -1,5 +1,7 @@
 const organizeInstructors = function (instructors) {
   // Put your solution here
+
+  console.log(instructors);
 };
 
 console.log(
@@ -10,6 +12,7 @@ console.log(
     { name: "Donald", course: "Web" },
   ])
 );
+
 console.log(
   organizeInstructors([
     { name: "Brendan", course: "Blockchain" },
