@@ -2,14 +2,18 @@ const organizeInstructors = function (instructors) {
   // Put your solution here
 
   let finalObj = {};
-  let finalArray = [];
+  let firstArray = [];
+  let secondArray = [];
 
-  for (const elem of instructors) {
-    for (const [key, value] of Object.entries(elem)) {
-      finalArray.push(value);
-      finalObj[elem.course] = finalArray;
+  instructors.forEach(function (element) {
+    if (element.course === "Web") {
+      firstArray.push(element.name);
+      finalObj[element.course] = firstArray;
+    } else if (element.course === "iOS") {
+      secondArray.push(element.name);
+      finalObj[element.course] = secondArray;
     }
-  }
+  });
 
   return finalObj;
 };
