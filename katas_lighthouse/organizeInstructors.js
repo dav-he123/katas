@@ -19,16 +19,9 @@ const organizeInstructors = function (instructors) {
     finalObj[elem.course] = [];
   }
 
-  // console.log(finalObj);
-
   for (const student of instructors) {
     // console.log(student);
-    // console.log(finalObj);
     finalObj[student.course].push(student.name);
-    // console.log(finalObj[student.course]);
-    // console.log("AAAAAAAAAAA");
-    // console.log(finalObj[student.course]);
-    // console.log(student.name);
   }
 
   return finalObj;
