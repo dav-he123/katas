@@ -19,8 +19,13 @@ const organizeInstructors = function (instructors) {
     finalObj[elem.course] = [];
   }
 
+  // console.log(finalObj);
+
   for (const student of instructors) {
+    // console.log(student);
+    // console.log(finalObj);
     finalObj[student.course].push(student.name);
+    // console.log(finalObj[student.course]);
     // console.log("AAAAAAAAAAA");
     // console.log(finalObj[student.course]);
     // console.log(student.name);
@@ -38,11 +43,11 @@ console.log(
   ])
 );
 
-// console.log(
-//   organizeInstructors([
-//     { name: "Brendan", course: "Blockchain" },
-//     { name: "David", course: "Web" },
-//     { name: "Martha", course: "iOS" },
-//     { name: "Carlos", course: "Web" },
-//   ])
-// );
+console.log(
+  organizeInstructors([
+    { name: "Brendan", course: "Blockchain" },
+    { name: "David", course: "Web" },
+    { name: "Martha", course: "iOS" },
+    { name: "Carlos", course: "Web" },
+  ])
+);
